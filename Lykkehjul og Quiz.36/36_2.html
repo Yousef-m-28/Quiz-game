@@ -1,0 +1,747 @@
+
+<html>
+<head>
+<style>
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover:not(.active) {
+	background-color: rgb(0, 139, 93);
+}
+
+.active {
+	background-color: rgb(0, 139, 93);
+}
+
+body {
+	 background-image:url("bilde4.jpg");
+	background-size:100%;
+	overflow:hidden;
+	background-attachment: scroll;
+	  font-weight:600;
+		color: white;
+	}
+
+.bakgrunn{
+z-index:-1;
+height:411px;
+width:750px;
+}
+.roulette_center {
+  position: absolute;
+  top: 150px;
+  left: 780px;
+  cursor: pointer;
+}
+
+.roulette_center:hover {
+  transform: scale(1.01);
+}
+
+.roulette_wheel{
+position:absolute;
+top:30;
+left:400;
+touch-action: auto;
+pointer-events:painted
+
+}
+
+.single-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.single-input-wrapper > label {
+  width: 150px;
+}
+
+.single-input-wrapper > input {
+  width: 150px;
+}
+
+#score {
+  position: absolute;
+  top: 180px;
+  left: 900px;
+  color:rgba(211, 211, 211, 0);
+  font-weight: 800;
+  font-size: 30px;
+}
+
+#indicator {
+   position: absolute;
+   top: 10px;
+   left: 560px;
+   background-color: rgba(255, 0, 0, 0);
+   width: 5px;
+   height: 50px;
+}
+#all-input-wrappers {
+  z-index: 10;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.2;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.2s;
+}
+
+#img5 {
+	position: absolute;
+	top: 150;
+	left: 900px;
+	border: 4px solid rgba(31, 186, 238, 0);
+     border-radius:5px;
+		 background-color: #65A99B;
+
+}
+
+#img6 {
+	position: absolute;
+	top: 50;
+	left: 380px;
+}
+
+#tekst1 {
+	position: absolute;
+	left: 520;
+	top: 505px;
+	border: 4px solid lightblue;
+		 border-radius:5px;
+		 background-color: rgb(0, 139, 116);
+}
+
+#tekst2 {
+	position: absolute;
+	left: 610;
+	top: 540px;
+	border: 4px solid lightblue;
+		 border-radius:5px;
+		 background-color: rgb(0, 139, 116);
+}
+
+#tekst3 {
+	position: absolute;
+	color: white;
+	left: 600;
+	top: 590px;
+	border: 4px solid lightblue;
+		 border-radius:5px;
+		 background-color: rgb(0, 139, 116);
+}
+#Teksten {
+	position: absolute;
+	top: 350px;
+	left: 950;
+	border: 4px solid lightblue;
+		 border-radius:5px;
+		 background-color: rgb(0, 139, 116);;
+}
+
+#all-input-wrappers:hover {
+  opacity: 0.8;
+}
+
+</style>
+
+<script>function utregn(){
+var dyr = tall.dyr.value;
+var scoreElem = document.getElementById('score');
+console.log("inside run")
+
+
+if (dyr=="leopard" && scoreElem =="leopard"){
+
+	var tekst= "Du fikk riktig!"
+}
+
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+
+if (dyr=="gorilla" && scoreElem =="gorilla"){
+
+var tekst= "Du fikk riktig!"
+}
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+if (dyr=="panda" && scoreElem =="panda"){
+
+var tekst= "Du fikk riktig!"
+}
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+if (dyr=="elefant" && scoreElem =="elefant"){
+
+var tekst= "Du fikk riktig!"
+}
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+if (dyr=="tiger" && scoreElem =="tiger"){
+
+var tekst= "Du fikk riktig!"
+}
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+if (dyr=="nesehorn" && scoreElem =="nesehorn"){
+
+var tekst= "Du fikk riktig!"
+}
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+if (dyr=="flodehest" && scoreElem =="flodehest"){
+
+var tekst= "Du fikk riktig!"
+}
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+if (dyr=="ape" && scoreElem =="ape"){
+
+var tekst= "Du fikk riktig!"
+}
+else if (dyr && scoreElem!=""){
+	var tekst= "Du fikk ikke riktig"
+}
+
+
+document.getElementById("Teksten").innerHTML = tekst;
+
+}</script>
+</head>
+<body>
+
+	<ul>
+    <li><a class="active" href="./HOVEDSIDE.html" ><font face="calibri"; size=4%> HOME </font></a></li>
+  </ul>
+
+<span id="score"></span>
+<img id="img6"
+class="roulette_wheel"
+src="hjul.png"
+/>
+<img id="img5"
+class="roulette_center"
+src="arrow.png"
+onfocus="transform()">
+<div id="indicator"></div>
+</div>
+
+
+<form name = "tall" id="tall1">
+
+
+<p id="tekst1">Trykk på pilen for å rotere lykkehjulet
+
+<p id="tekst2">Velg et dyr:<p>
+<select id="tekst3" name="dyr" >
+  <option value="leopard">LEOPARD</option>
+  <option value="gorilla">GORILLA</option>
+  <option value="panda">PANDA</option>
+  <option value="elefant">ELEFANT</option>
+  <option value="tiger">TIGER</option>
+  <option value="nesehorn">NESEHORN</option>
+  <option value="flodehest">FLODEHEST</option>
+  <option value="ape">APE</option>
+</select>
+
+<div id="Teksten"></div>
+
+</form>
+</body>
+<script>
+(function() {
+
+var values = [
+
+  "leopard", "gorilla", "panda", "elefant", "tiger", "nesehorn", "flodehest", "ape"
+
+];
+
+var speed = 0;
+
+// should init angle so that the cursor is at the center of the desired value,
+
+// this is just to test the offset is right
+
+var angle = getAngleFor("Intellectual");
+
+// how much of the speed is kept at each update step (0 < i < 1, the bigger the longer the wheel spins)
+
+var inertia = 0.988;
+
+var minSpeed = 15;
+
+// how much randomness in initial push speed
+
+var randRange = 15;
+
+// strongest absolute force that an attractor can exerce (is squashed to before scaling is applied)
+
+var maxAttractionForce = 0.5;
+
+// scale attraction force
+
+var attractionForceFactor = 0.02;
+
+var rouletteElem = document.getElementsByClassName('roulette_wheel')[0];
+
+var scoreElem = document.getElementById('score');
+
+// offset the display angle so that angle 0 is at the edge of the first slice
+
+var offset = 26.42;
+
+var currentAnimationFrame = null;
+
+var clickedSliceIndex = -1;
+
+var estimatedSliceIndex = -1;
+
+var totalAngle = 0;
+
+
+function updateInputMeter(input) {
+
+  input.parentElement.getElementsByClassName('input-meter')[0].innerHTML = input.value;
+
+}
+
+function roulette_spin(evt) {
+
+	console.log("roulette_spin")
+
+  evt.stopPropagation();
+
+  clickedSliceIndex = -1;
+
+  totalAngle = 0;
+
+  // erase score
+
+  scoreElem.innerHTML = '';
+
+  // set initial speed randomly
+
+  speed = Math.floor(Math.random() * randRange) + minSpeed;
+
+  // console.log('initial speed', speed);
+
+  // probably far from accurate but it kind of works, attractor
+
+  // completely ignored because when spinning fast it cost speed as much
+
+  // as it adds, and after it won't matter
+
+  // since we will be forcing the attractor to where we want to stop
+
+  var estimatedSpin = speed / (1 - inertia);
+
+  // console.log('estimated total spin approximation', estimatedSpin);
+
+  estimatedSliceIndex = getSliceIndex((angle + estimatedSpin) % 360);
+
+  // console.log('estimated stopping slice', values[estimatedSliceIndex]);
+
+  if (currentAnimationFrame) {
+
+    cancelAnimationFrame(currentAnimationFrame);
+
+  }
+
+  currentAnimationFrame = requestAnimationFrame(doAnimation);
+
+}
+
+
+
+function getSliceIndex(angle) {
+
+    return Math.floor(((angle / 360) * values.length));
+
+}
+
+
+
+function getCircularDist(a, b) {
+
+    // assuming both a and b are positive angles 0 <= angle <= 360
+
+    // find shortest oriented distance
+
+    // example: if a is 350 degrees and b is 10 degrees what's the actuals angular dist from a to b
+
+    // naive implementation would be b - a which gives - 340 => wrong, it only takes
+
+    // 20 degrees to rotate from 350 to 10 => b - (a - 360)
+
+    // conversely if a is 300 and b is 250 the shortest distance is
+
+    // the other way around => b - a = -50 degrees
+
+    var d1 = b  - a;
+
+    var d2 = b - (a - 360);
+
+    return Math.abs(d1) >= Math.abs(d2) ? d2 : d1;
+
+}
+
+
+
+function setRouletteAngle(angle) {
+
+    rouletteElem.style.transform = 'rotate(' + (offset + angle) + 'deg)';
+
+}
+
+
+
+function getAngleFor(value) {
+
+    return getAngleForIndex(values.indexOf(value));
+
+}
+
+
+
+function getAngleForIndex(sliceIndex) {
+
+    return (sliceIndex + 0.5) * (360 / values.length);
+
+}
+
+
+
+function handleRouletteClick(evt) {
+
+  // coordinate of the center of the wheel
+
+  var centerX = rouletteElem.offsetWidth / 2;
+
+  var centerY = rouletteElem.offsetHeight / 2;
+
+  // console.log('centerX', centerX, 'centerY',centerY);
+
+  // roulette's parent bounding rect
+
+  var rect = evt.target.parentElement.getBoundingClientRect();
+
+  // coordinates of the click in roulette's parent coordinates
+
+  var clickX = evt.clientX - rect.x;
+
+  var clickY = evt.clientY - rect.y;
+
+  // resulting coordinates relative to the center of the wheel
+
+  var x = clickX - centerX;
+
+  var y = clickY - centerY;
+
+  // console.log('x', x, 'y', y);
+
+  var norm = Math.sqrt(x*x+y*y);
+
+  // -pi < rad < pi
+
+  var rad = Math.atan2(x, y);
+
+  var deg = (rad * 180) / Math.PI;
+
+  // 0 <= clickedAngle < 360 starting from the first slice
+
+  var clickedAngle = ((deg < 0 ? deg + 360 : deg) + angle + 180) % 360;
+
+  clickedSliceIndex = Math.floor((clickedAngle / 360) * values.length);
+
+  scoreElem.style.color = 'lightgrey';
+
+  scoreElem.innerHTML = 'clicked ' + values[clickedSliceIndex];
+
+  // outside of an animation started with the center button it will make the wheel spin to target
+
+  if (!currentAnimationFrame) {
+
+    // assume wheel is not mmoving so the estimated slice is the slice at the current angle
+
+    estimatedSliceIndex = getSliceIndex(angle);
+
+    currentAnimationFrame = requestAnimationFrame(doAnimation);
+
+  }
+
+  var estimatedAngle = getAngleForIndex(estimatedSliceIndex);
+
+  var targetFinalAngle = getAngleForIndex(clickedSliceIndex);
+
+  var spinError = getCircularDist(estimatedAngle, targetFinalAngle);
+
+  var speedCorrection = spinError * (1 - inertia);
+
+  speed += speedCorrection;
+
+
+
+}
+
+
+
+function doAnimation() {
+
+  // new angle is previous angle + speed modulo 360 (so that it stays between 0 and 360)
+
+  totalAngle += speed;
+
+  angle = (angle + speed) % 360;
+
+  // decay speed according to inertia parameter
+
+  speed = speed - (1 - inertia) * speed;
+
+  // add attractor force: inverse of circular oriented dist to the closest slice center * some factor
+
+  var sliceIndex = clickedSliceIndex !== -1 ? clickedSliceIndex : getSliceIndex(angle);
+
+
+
+  var target = getAngleForIndex(sliceIndex);
+
+  var orientedDist = getCircularDist(angle, target);
+
+
+
+  // protect against infinity (division by 0 or close to 0)
+
+  var inverseOrientedDistAmplitude = orientedDist === 0
+
+    ? maxAttractionForce
+
+    : Math.min(1/Math.abs(orientedDist), maxAttractionForce);
+
+  var finalAttractionForce = Math.sign(orientedDist) * inverseOrientedDistAmplitude * attractionForceFactor;
+
+
+
+  speed = speed + finalAttractionForce;
+
+
+
+  setRouletteAngle(angle);
+
+  // stop animation if speed is low and close to attraction point
+
+  if (speed < 0.01  && Math.abs(orientedDist) < 0.05 ) {
+
+    // console.log('total spin', totalAngle);
+
+    scoreElem.style.color = 'lightgrey';
+
+    scoreElem.innerHTML = values[getSliceIndex(angle)];
+
+    currentAnimationFrame = null;
+
+	console.log("doAnimation")
+
+	utregn()
+
+    return;
+
+  }
+
+  currentAnimationFrame = requestAnimationFrame(doAnimation);
+
+}
+
+
+
+setRouletteAngle(angle);
+
+document.getElementsByClassName('roulette_center')[0].addEventListener('click', roulette_spin);
+
+rouletteElem.parentElement.addEventListener('click', handleRouletteClick);
+
+('minSpeed', 15, 0, 60, 0.5, function(evt) {
+
+  var rangeInput = evt.target;
+
+  minSpeed = parseFloat(rangeInput.value);
+
+  updateInputMeter(rangeInput)
+
+});
+
+
+
+('inertia', 0.988, 0.900, 0.999, 0.001, function(evt) {
+
+  var rangeInput = evt.target;
+
+  inertia = parseFloat(rangeInput.value);
+
+  updateInputMeter(rangeInput)
+
+});
+
+
+
+('attractionForceFactor', 0.02, 0, 0.1, 0.001, function(evt) {
+
+  var rangeInput = evt.target;
+
+  attractionForceFactor = parseFloat(rangeInput.value);
+
+  updateInputMeter(rangeInput)
+
+});
+
+
+
+('maxAttractionForce', 0.5, 0, 1.5, 0.01, function(evt) {
+
+  var rangeInput = evt.target;
+
+  maxAttractionForce = parseFloat(rangeInput.value);
+
+  updateInputMeter(rangeInput)
+
+});
+
+
+
+function utregn(){
+
+var dyr = tall.dyr.value;
+
+var scoreElem = document.getElementById('score');
+
+var scoresjekk = scoreElem.outerHTML
+
+resultat_1 = scoresjekk.match(/leopard/g)
+resultat_2 = scoresjekk.match(/gorilla/g)
+resultat_3 = scoresjekk.match(/panda/g)
+resultat_4 = scoresjekk.match(/elefant/g)
+resultat_5 = scoresjekk.match(/tiger/g)
+resultat_6 = scoresjekk.match(/nesehorn/g)
+resultat_7 = scoresjekk.match(/flodehest/g)
+resultat_8 = scoresjekk.match(/ape/g)
+
+if (resultat_1 == "leopard" ) {
+	scoresjekk = "leopard"
+	console.log ("Bingo leopard")
+}
+
+else if (resultat_2 == "gorilla") {
+	scoresjekk = "gorilla"
+	console.log ("Bingo gorilla")
+}
+
+else if (resultat_3 == "panda") {
+	scoresjekk = "panda"
+	console.log ("Bingo panda")
+}
+
+else if (resultat_4 == "elefant") {
+	scoresjekk = "elefant"
+	console.log ("Bingo elefant")
+}
+
+else if (resultat_5 == "tiger") {
+	scoresjekk = "tiger"
+	console.log ("Bingo tiger")
+}
+else if (resultat_6 == "nesehorn") {
+	scoresjekk = "nesehorn"
+	console.log ("Bingo nesehorn")
+}
+else if (resultat_7 == "flodehest") {
+	scoresjekk = "flodehest"
+	console.log ("Bingo flodehest")
+}
+else if (resultat_8 == "ape") {
+	scoresjekk = "ape"
+	console.log ("Bingo ape")
+}
+
+console.log("outside run")
+
+console.log ("dyr = ", dyr)
+
+console.log ("scoreElem = ", scoreElem)
+
+console.log ("scoresjekk = ", scoresjekk)
+
+
+
+if (dyr=="leopard" && scoresjekk =="leopard"){
+	var tekst= "Du tippet leopard, det ser ut som er å være riktig!"
+}
+
+else if (dyr=="gorilla" && scoresjekk =="gorilla"){
+	var tekst= "Du tippet gorilla, det ser ut som å være riktig!"
+}
+
+else if (dyr=="panda" && scoresjekk =="panda"){
+	var tekst= "Du tippet panda, det ser ut som å være riktig!"
+}
+
+else if (dyr=="elefant" && scoresjekk =="elefant"){
+	var tekst= "Du tippet elefant, det ser ut som å være riktig!"
+}
+
+else if (dyr=="tiger" && scoresjekk =="tiger"){
+	var tekst= "Du tippet tiger, det ser ut som å være riktig!"
+}
+
+else if (dyr=="nesehorn" && scoresjekk =="nesehorn"){
+	var tekst= "Du tippet nesehorn, det ser ut som å være riktig!"
+}
+
+else if (dyr=="flodehest" && scoresjekk =="flodehest"){
+	var tekst= "Du tippet flodehest, det ser ut som å være riktig!"
+}
+
+else if (dyr=="ape" && scoresjekk =="ape"){
+	var tekst= "Du tippet ape, det ser ut som å være riktig!"
+}
+
+else {
+	var tekst= "Du tippet ikke riktig, prøv igjen!"
+}
+
+
+
+
+document.getElementById("Teksten").innerHTML = tekst;
+
+}
+
+})();
+</script>
+</html>

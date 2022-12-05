@@ -1,0 +1,159 @@
+<html>
+<head>
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: darkblue;
+}
+
+.active {
+  background-color: darkblue;
+}
+
+body {margin:0;}
+
+#form {
+position:absolute;
+left:430;
+top:80;
+background-color:white;
+height:380;
+width:500;
+padding:10;
+border-style: solid;
+border: 4px solid black;
+background-image: url('bilde.jpg');
+border-radius:25px;
+color: white;
+}
+
+body {  
+background-image:url("bilde2.jpg");
+background-size:100% 100%;
+overflow:hidden;
+background-attachment: scroll;
+  font-weight:600;
+}
+
+.button {
+  padding: 8px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: lightblue;
+  color: black;
+  border: 2px solid 2px solid #555555;
+
+}
+.button:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+ul.a {
+  list-style-type:circle;
+;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+<script>
+
+
+function utregn(){
+
+var quantity = tall.quantity.value.replace(",",".");
+if(quantity>=3 && quantity<=130){
+
+if (quantity>=3 && quantity<=11){
+
+	var aktivitet1 = "○ Barnesanger";
+	var aktivitet2 = "○ Ville dyr- lykkehjul";
+	var aktivitet3 = "○ Land og flagg";
+
+}
+
+else if (quantity>=12 && quantity<=17){
+
+	var aktivitet1 = "○ musikk";
+	var aktivitet2 = "○ Bilmerker";
+	var aktivitet3 = "○ Fotball?";
+
+}
+
+else if (quantity=>18){
+
+	var aktivitet1 = "○ Quiz";
+	var aktivitet2 = "○ Historie";
+	var aktivitet3 = "○ Geografi";
+
+}
+var visTekst = "For alderen  "+quantity+" år har vi følgende konkurranser:<p>";
+
+
+document.getElementById("Teksten").innerHTML = visTekst;
+document.getElementById("a1").innerHTML=aktivitet1;
+document.getElementById("a2").innerHTML=aktivitet2;
+document.getElementById("a3").innerHTML=aktivitet3;
+document.getElementById("alder").innerHTML=quantity;
+
+
+}
+else if (quantity!==""){
+alert("Gyldig alder er fra 3 til 130");
+}
+}
+</script>
+</head>
+<body>
+
+  <ul>
+    <li><a class="active" href="./HOVEDSIDE.html"><font face="calibri"; size=4%> HOME </font></a></li>
+  </ul>
+
+<form name = "tall" id="form">
+<h1>konkurranser</h1>
+
+<p>Skriv inn alderen din, så kommer det forslag til konkurranser som passer aldren din</p>
+<p id="tekst1">
+  <label for="quantity">Skriv inn alder:</label>
+  <input type="number" id="quantity" name="quantity" min="3" max="130">
+
+<p><input type = "button" name ="beregn" value = "Send" onClick="utregn()" class="button"></p>
+<div id="Teksten"></div>
+
+<ul class="a">
+  <p id="a1"></p>
+  <p id="a2"></p>
+  <p id="a3"></p>
+</ul>
+
+</form>
+
+</body>
+</html>
